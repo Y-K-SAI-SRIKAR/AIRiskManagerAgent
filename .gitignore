@@ -1,3 +1,117 @@
+# ==============================
+# Python
+# ==============================
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# ==============================
+# Virtual Environment
+# ==============================
+
+.venv/
+venv/
+env/
+ENV/
+
+# ==============================
+# Environment Variables / Secrets
+# ==============================
+
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
+
+# ==============================
+# IDEs / Editors
+# ==============================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==============================
+# Testing / Coverage
+# ==============================
+
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# ==============================
+# Type Checking / Linters
+# ==============================
+
+.mypy_cache/
+.pyre/
+.ruff_cache/
+
+# ==============================
+# Logs
+# ==============================
+
+*.log
+logs/
+
+# ==============================
+# Local Databases
+# ==============================
+
+*.db
+*.sqlite
+*.sqlite3
+
+# ==============================
+# Temporary Files
+# ==============================
+
+*.tmp
+*.temp
+*.bak
+.DS_Store
+Thumbs.db
+
+# ==============================
+# Jupyter
+# ==============================
+
+.ipynb_checkpoints/
+
+# ==============================
+# Build / Distribution
+# ==============================
+
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ==============================
+# OS Files
+# ==============================
+
+Desktop.ini
+
+# ==============================
+# Local Agent Data
+# ==============================
+
+data/
+storage/
+cache/
+
+# ==============================
+# Secrets / Credentials
+# ==============================
+
+*.pem
+*.key
+*.crt
+credentials.json
+service-account.json
