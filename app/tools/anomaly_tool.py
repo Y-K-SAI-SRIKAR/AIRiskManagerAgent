@@ -2,6 +2,10 @@ from typing import Any, Dict
 
 
 class AnomalyTool:
+    """
+    Detect suspicious transaction behaviour using
+    deterministic behavioural indicators.
+    """
 
     def analyze(
         self,
@@ -39,25 +43,14 @@ class AnomalyTool:
         # High-value transaction
         # ----------------------------------------------------------
 
-        if transaction_analysis.get(
-            "high_amount",
-            False,
-        ):
+        if transaction_analysis.get("high_amount"):
             triggered_anomalies.append(
                 "HIGH_VALUE_TRANSACTION"
             )
 
         # ----------------------------------------------------------
-        # New customer / no history
+        # Final anomaly assessment
         # ----------------------------------------------------------
-
-        if not customer_history.get(
-            "history_available",
-            False,
-        ):
-            triggered_anomalies.append(
-                "NO_CUSTOMER_HISTORY_AVAILABLE"
-            )
 
         anomaly_detected = bool(
             triggered_anomalies

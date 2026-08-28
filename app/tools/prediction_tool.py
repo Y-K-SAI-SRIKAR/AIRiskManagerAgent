@@ -2,6 +2,10 @@ import os
 from typing import Any, Dict
 
 import httpx
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
 
 DEFAULT_TIMEOUT = 30.0
@@ -14,11 +18,16 @@ class PredictionToolError(Exception):
 
 
 def get_ml_service_url() -> str:
+    """
+    Get the ML inference service URL from environment variables.
+    """
 
-    url = os.getenv(
-        "ML_SERVICE_URL",
-        "http://localhost:8001",
-    )
+    url = os.getenv("ML_SERVICE_URL")
+
+    if not url:
+        raise PredictionToolError(
+            "ML_SERVICE_URL is not configured."
+        )
 
     return url.rstrip("/")
 
