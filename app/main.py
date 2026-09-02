@@ -4,6 +4,7 @@ from pathlib import Path
 import json
 
 from fastapi import FastAPI, File, HTTPException, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.agent import RiskManagerAgent
 from app.database import SessionLocal
@@ -30,6 +31,17 @@ app = FastAPI(
 
 agent = RiskManagerAgent()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:6979",
+        "https://airiskmanagerbackend.onrender.com",
+        "https://airiskmanagermlmodel.onrender.com/"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # ---------------------------------------------------------
 # Batch Prediction Tool
